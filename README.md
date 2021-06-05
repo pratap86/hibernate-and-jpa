@@ -1,1 +1,1 @@
-# hibernate-and-jpa
+# Hibernate-with-JPA
