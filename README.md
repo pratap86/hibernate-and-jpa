@@ -6,6 +6,7 @@
 - Queries
   - Criteria Query
   - Named Query
+  - Native Query
 - Transaction Management
 - Caching
 - Hibernate soft delete
@@ -17,3 +18,9 @@
 - Calling Stored Procedure
 - Save & Retrieve Files(BLOB - Binary Large Object)
 - Connecting to multiple databases
+
+### Query
+#### SQL - Queries from Tables
+- SELECT * FROM COURSE;
+#### JPQL - Queries from Entities
+- Select c from Course c;
