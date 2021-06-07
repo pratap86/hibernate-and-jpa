@@ -1,6 +1,7 @@
 package com.pratap.jpa.repository;
 
 import com.pratap.jpa.HibernateApplication;
+import com.pratap.jpa.entity.Course;
 import com.pratap.jpa.entity.Passport;
 import com.pratap.jpa.entity.Student;
 import org.junit.jupiter.api.Test;
@@ -57,6 +58,26 @@ class StudentRepositoryTest {
         assertNotNull(passport);
         assertEquals("E123456", passport.getPassportNumber());
         assertEquals("Sankalp", passport.getStudent().getName());
+    }
+
+    @Test
+    @Transactional
+    void testGetStudentAndCourses(){
+
+        Student student = entityManager.find(Student.class, 20001L);
+
+        assertEquals("Sankalp", student.getName());
+        assertEquals(2, student.getCourses().size());
+    }
+
+    @Test
+    @Transactional
+    void testGetCourseAndStudents(){
+
+        Course course = entityManager.find(Course.class, 10002L);
+
+        assertEquals("Spring in 100 steps", course.getName());
+        assertEquals(3, course.getStudents().size());
     }
 
 }
