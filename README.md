@@ -24,3 +24,21 @@
 - SELECT * FROM COURSE;
 #### JPQL - Queries from Entities
 - Select c from Course c;
+
+#### JPA uses the EntityManager for talk to Persistence Context
+#### Hibernate uses the Seesion for talk to SessionFactory
+#### @Transactional
+ - Hibernate wait untill the last possible moment of change, if something is failed in between whole transaction would be rollback, except untill you not triggered EntityManager.flush().
+
+``` ruby
+@Transactional
+public List<Comments> someReadOnlyMethod(){
+  User user = EntityManager.find(User.class, 1000L);// By default transaction is associated with EntityManager and its done once find() method completed.
+  List<Comment> comments = user.getComments();//triggered the SELECT query from DB, so DB connection is mandatory
+}
+
+```
+
+#### @DirtiesContext
+- use along with @Test, to reset the data in in-memory db in case of update/new record.
+- To leave the data in consistent state
