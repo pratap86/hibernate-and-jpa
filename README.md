@@ -42,3 +42,9 @@ public List<Comments> someReadOnlyMethod(){
 #### @DirtiesContext
 - use along with @Test, to reset the data in in-memory db in case of update/new record.
 - To leave the data in consistent state
+
+#### Composite Primary Key
+
+``` ruby
+Customer -> id + email
+```
