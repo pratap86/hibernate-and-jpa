@@ -80,4 +80,17 @@ class StudentRepositoryTest {
         assertEquals(3, course.getStudents().size());
     }
 
+    @Test
+    @Transactional
+    void testSaveStudentAndCourse(){
+
+        Student student = new Student("Radhe");
+        Course course = new Course("Kubernetes in 100 steps");
+
+        Student saveStudentAndCourse = studentRepository.saveStudentAndCourse(student, course);
+        assertEquals("Kubernetes in 100 steps", saveStudentAndCourse.getCourses().get(0).getName());
+        assertEquals("Radhe", saveStudentAndCourse.getCourses().get(0).getStudents().get(0).getName());
+
+    }
+
 }
