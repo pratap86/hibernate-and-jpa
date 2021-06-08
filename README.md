@@ -8,7 +8,7 @@
   - Named Query
   - Native Query
 - Transaction Management
-- Caching
+- Hibernate Caching Mechanism
 - Hibernate soft delete
 - Embedded & Embeddable
 - Be cautious with toString method implementations
