@@ -52,6 +52,7 @@ class CourseRepositoryTest {
 
     @Test
     @DirtiesContext
+    @Transactional
     void testSave_Existing_Record(){
         Course course = courseRepository.findById(10001L);
         course.setName("AngularJS");
