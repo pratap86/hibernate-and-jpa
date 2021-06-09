@@ -45,6 +45,3 @@ public List<Comments> someReadOnlyMethod(){
 
 #### Composite Primary Key
 
-``` ruby
-Customer -> id + email
-```
