@@ -26,3 +26,12 @@ insert into STUDENT_COURSE(student_id, course_id) values
 (20003, 10002),
 (20001, 10003);
 
+insert into part_time_employee (id, name, hourly_wage) values
+(60001, 'Naresh', 60),
+(60002, 'Prakash', 70);
+
+insert into full_time_employee (id, name, salary) values
+(60001, 'Ram', 60000),
+(60002, 'Shyam', 70000),
+(60003, 'Shankar', 65000);
+
