@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-@ToString
 public class Passport {
 
     @Id

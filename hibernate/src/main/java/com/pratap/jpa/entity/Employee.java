@@ -12,7 +12,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 @MappedSuperclass
-@ToString
 public abstract class Employee {
 
     @Getter

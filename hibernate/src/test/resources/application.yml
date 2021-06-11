@@ -22,7 +22,6 @@ spring:
   h2:
     console:
       enabled: true
-
 # Logging Level
 logging:
   level:

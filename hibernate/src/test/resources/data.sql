@@ -8,7 +8,7 @@ insert into course(id, name, created_date, last_updated_date) values
 insert into passport(id, passport_number) values
 (40001, 'E123456'),
 (40002, 'N123457'),
-(40003, 'L123458');
+(40003, 'L123558');
 
 insert into student(id, name, passport_id) values
 (20001, 'Sankalp', 40001),

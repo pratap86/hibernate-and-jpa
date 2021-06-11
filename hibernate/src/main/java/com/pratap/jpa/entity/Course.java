@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@ToString
 @NamedQueries(value = {
         @NamedQuery(name = "get_all_course_query", query = "Select c from Course c"),
         @NamedQuery(name = "get_100_steps_query", query = "Select c from Course c where c.name like '%100 steps'")
