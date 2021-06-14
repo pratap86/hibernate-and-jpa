@@ -43,5 +43,7 @@ public List<Comments> someReadOnlyMethod(){
 - use along with @Test, to reset the data in in-memory db in case of update/new record.
 - To leave the data in consistent state
 
-#### Composite Primary Key
+#### Caching
+- First level cache is bounded with boundary of Transaction.
+- Transaction boudary should be start from Service layer.
 
