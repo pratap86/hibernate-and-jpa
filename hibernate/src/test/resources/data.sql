@@ -1,9 +1,9 @@
-insert into course(id, name, created_date, last_updated_date) values
-(10001, 'Hibernate in 100 steps', sysdate(), sysdate()),
-(10002, 'Spring in 100 steps', sysdate(), sysdate()),
-(10003, 'Microservices', sysdate(), sysdate()),
-(10004, 'Docker', sysdate(), sysdate()),
-(10005, 'Kubernetes', sysdate(), sysdate());
+insert into course(id, name, created_date, last_updated_date, is_deleted) values
+(10001, 'Hibernate in 100 steps', sysdate(), sysdate(), false),
+(10002, 'Spring in 100 steps', sysdate(), sysdate(), false),
+(10003, 'Microservices', sysdate(), sysdate(), false),
+(10004, 'Docker', sysdate(), sysdate(), false),
+(10005, 'Kubernetes', sysdate(), sysdate(), false);
 
 insert into passport(id, passport_number) values
 (40001, 'E123456'),

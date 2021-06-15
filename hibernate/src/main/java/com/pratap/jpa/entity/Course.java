@@ -4,7 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.Cacheable;
 import javax.persistence.Entity;
@@ -14,6 +16,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.PreRemove;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +27,8 @@ import java.util.List;
         @NamedQuery(name = "get_100_steps_query", query = "Select c from Course c where c.name like '%100 steps'")
 })
 @Cacheable
+@SQLDelete(sql = "update Course set is_deleted=true where id=?")
+@Where(clause = "is_deleted=false")
 public class Course {
 
     @Getter
@@ -40,6 +45,8 @@ public class Course {
 
     @UpdateTimestamp
     private LocalDateTime lastUpdatedDate;
+
+    private boolean isDeleted;
 
     @Getter
     @OneToMany(mappedBy = "course")
@@ -65,6 +72,11 @@ public class Course {
 
     public void addStudent(Student student){
         this.students.add(student);
+    }
+
+    @PreRemove//in case of cacheable Entity would be updated
+    public void preRemove(){
+        this.isDeleted=true;
     }
 
     @Override
