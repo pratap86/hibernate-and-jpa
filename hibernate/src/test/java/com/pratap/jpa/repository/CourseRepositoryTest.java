@@ -5,6 +5,8 @@ import com.pratap.jpa.entity.Course;
 import com.pratap.jpa.entity.Review;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
@@ -22,6 +24,8 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = HibernateApplication.class)
 class CourseRepositoryTest {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(CourseRepositoryTest.class);
 
     @Autowired
     CourseRepository courseRepository;
@@ -91,5 +95,17 @@ class CourseRepositoryTest {
         Review review = entityManager.find(Review.class, 50001L);
         assertEquals("Hibernate in 100 steps", review.getCourse().getName());
         assertEquals(2, review.getCourse().getReviews().size());
+    }
+
+    @Test
+//    @org.springframework.transaction.annotation.Transactional
+    void testFindById_first_level_cache() {
+        Course course = courseRepository.findById(10001L);
+        LOGGER.info("First Time Course Retrieved {}", course);
+        assertEquals("Hibernate in 100 steps", course.getName());
+
+        Course course1 = courseRepository.findById(10001L);
+        LOGGER.info("Second Time Course Retrieved {}", course1);
+        assertEquals("Hibernate in 100 steps", course1.getName());
     }
 }

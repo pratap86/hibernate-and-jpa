@@ -19,6 +19,19 @@ spring:
       hibernate:
         format_sql: true
         generate_statistics: true
+# Enable second level cache
+        # 1. enable second level cache
+        cache:
+          use_second_level_cache: true
+          # 2. specify caching framework - ehcache
+          region:
+            factory_class: org.hibernate.cache.ehcache.internal.EhcacheRegionFactory
+  # 3. Only cache what I tell you
+      javax:
+        persistence:
+          sharedCache:
+            mode: ENABLE_SELECTIVE
+  # 4. What data to cache?
   h2:
     console:
       enabled: true
@@ -29,3 +42,6 @@ logging:
       hibernate:
         stat: debug
         type: trace
+    net:
+      sf:
+        ehcache: debug
