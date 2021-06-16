@@ -15,7 +15,7 @@ import java.util.List;
 public class CourseRepository {
 
     @Autowired
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     public Course findById(Long id){
 

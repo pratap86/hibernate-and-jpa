@@ -17,7 +17,7 @@ class CustomerCompositePrimaryKeyTest {
 
 
     @Autowired
-    CustomerRepository customerRepository;
+    private CustomerRepository customerRepository;
 
     @Test
     void testSaveCustomer(){

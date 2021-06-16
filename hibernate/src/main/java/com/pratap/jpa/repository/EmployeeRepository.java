@@ -16,7 +16,7 @@ import java.util.List;
 public class EmployeeRepository {
 
     @Autowired
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Transactional
     public Employee save(Employee employee){

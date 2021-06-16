@@ -26,7 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CourseJpqlTest {
 
     @Autowired
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Test
     void testSelectJpql_basic(){

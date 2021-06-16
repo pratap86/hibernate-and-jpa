@@ -15,7 +15,7 @@ import javax.transaction.Transactional;
 public class StudentRepository {
 
     @Autowired
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Transactional
     public Student saveStudentWithPassport(Student student){

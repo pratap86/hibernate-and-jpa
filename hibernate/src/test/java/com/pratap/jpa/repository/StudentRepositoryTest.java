@@ -24,10 +24,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class StudentRepositoryTest {
 
     @Autowired
-    StudentRepository studentRepository;
+    private StudentRepository studentRepository;
 
     @Autowired
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
 
     @Test

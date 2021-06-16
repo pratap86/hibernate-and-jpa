@@ -21,7 +21,7 @@ public class PerformanceTuningTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(PerformanceTuningTest.class);
 
     @Autowired
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Test
     @Transactional

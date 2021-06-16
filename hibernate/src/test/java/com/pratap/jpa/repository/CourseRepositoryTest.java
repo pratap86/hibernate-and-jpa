@@ -29,10 +29,10 @@ class CourseRepositoryTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(CourseRepositoryTest.class);
 
     @Autowired
-    CourseRepository courseRepository;
+    private CourseRepository courseRepository;
 
     @Autowired
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Test
     void testFindById_Basic() {

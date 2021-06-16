@@ -2,7 +2,6 @@ package com.pratap.jpa.repository;
 
 import com.pratap.jpa.HibernateApplication;
 import com.pratap.jpa.entity.Course;
-import com.pratap.jpa.entity.Student;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +23,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(classes = HibernateApplication.class)
 @ExtendWith(SpringExtension.class)
-public class CriteiaQueryTest {
+public class CriteriaQueryTest {
 
     @Autowired
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Test
     void testGetAllCourses_Basic(){
