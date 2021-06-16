@@ -78,3 +78,8 @@ private boolean isDeleted;
 |`javax.persistence.PreRemove`||
 |`javax.persistence.PreUpdate`||
 
+#### Important Points to Remember
+- Use Lazy fetch mostly
+- All mapping *ToOne(@manyToOne or @OneToOne) are EAGER by default
+- All mapping *ToMany(@manyToMany or @OneToMany) are LAZY by default
+
