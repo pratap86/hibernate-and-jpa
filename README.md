@@ -47,3 +47,20 @@ public List<Comments> someReadOnlyMethod(){
 - First level cache is bounded with boundary of Transaction.
 - Transaction boudary should be start from Service layer.
 
+#### Soft Delete
+``` ruby
+// EntityManager.remove(Entity) remove complete row from DB where id = ?
+// Hibernate Soft delete maintain history through 
+@SQLDelete(sql = "update Course set is_deleted=true where id=?")
+@Where(clause = "is_deleted=false")
+public class Course {
+
+private boolean isDeleted;
+
+@PreRemove//in case of cacheable Entity would be updated
+    public void preRemove(){
+        this.isDeleted=true;
+    }
+}
+```
+
