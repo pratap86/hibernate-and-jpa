@@ -54,4 +54,12 @@ public class Student {
     public void addCourse(Course course){
         this.courses.add(course);
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

@@ -23,6 +23,7 @@ import java.util.List;
 @Entity
 @NamedQueries(value = {
         @NamedQuery(name = "get_all_course_query", query = "Select c from Course c"),
+        @NamedQuery(name = "get_all_course_join_fetch_query", query = "Select c from Course c join fetch c.students s"),
         @NamedQuery(name = "get_100_steps_query", query = "Select c from Course c where c.name like '%100 steps'")
 })
 @Cacheable

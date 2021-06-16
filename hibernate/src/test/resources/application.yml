@@ -18,6 +18,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+        # Turn statistics on
         generate_statistics: true
 # Enable second level cache
         # 1. enable second level cache
