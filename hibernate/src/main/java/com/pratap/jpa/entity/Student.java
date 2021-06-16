@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -38,6 +39,11 @@ public class Student {
     joinColumns = @JoinColumn(name = "STUDENT_ID"),
     inverseJoinColumns = @JoinColumn(name = "COURSE_ID"))
     private List<Course> courses = new ArrayList<>();
+
+    @Embedded
+    @Getter
+    @Setter
+    private Address address;
 
     protected Student(){}
 

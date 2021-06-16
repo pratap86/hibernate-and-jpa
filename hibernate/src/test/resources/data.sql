@@ -10,10 +10,10 @@ insert into passport(id, passport_number) values
 (40002, 'N123457'),
 (40003, 'L123558');
 
-insert into student(id, name, passport_id) values
-(20001, 'Sankalp', 40001),
-(20002, 'Rahul', 40002),
-(20003, 'Ravi', 40003);
+insert into student(id, name, passport_id, house_num, street, city) values
+(20001, 'Sankalp', 40001, 112, 'New Avenue Road', 'Noida'),
+(20002, 'Rahul', 40002, 113, 'Old Avenue Road', 'Gr Noida'),
+(20003, 'Ravi', 40003, 007, 'MG Road', 'Bangalore');
 
 insert into review(id, rating, description, course_id) values
 (50001, 5, 'Great Course', 10001),
