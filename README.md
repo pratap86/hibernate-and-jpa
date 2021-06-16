@@ -46,6 +46,8 @@ public List<Comments> someReadOnlyMethod(){
 #### Caching
 - First level cache is bounded with boundary of Transaction.
 - Transaction boudary should be start from Service layer.
+- Second level cache is specific to application entities.
+- Distributed Cache - Hazelcast
 
 #### Soft Delete
 ``` ruby
@@ -63,4 +65,16 @@ private boolean isDeleted;
     }
 }
 ```
+
+### JPA Entity Life Cycle Methods
+
+|JPA Methods|Description|
+|---|---|
+|`javax.persistence.PostLoad`||
+|`javax.persistence.PostPersist`||
+|`javax.persistence.PostRemove`||
+|`javax.persistence.PostUpdate`||
+|`javax.persistence.PrePersist`||
+|`javax.persistence.PreRemove`||
+|`javax.persistence.PreUpdate`||
 
