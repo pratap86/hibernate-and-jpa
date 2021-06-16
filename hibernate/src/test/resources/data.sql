@@ -16,9 +16,9 @@ insert into student(id, name, passport_id, house_num, street, city) values
 (20003, 'Ravi', 40003, 007, 'MG Road', 'Bangalore');
 
 insert into review(id, rating, description, course_id) values
-(50001, 5, 'Great Course', 10001),
-(50002, 4, 'Wonderful Course', 10003),
-(50003, 5, 'Awesome Course', 10001);
+(50001, 'FIVE', 'Great Course', 10001),
+(50002, 'FOUR', 'Wonderful Course', 10003),
+(50003, 'FIVE', 'Awesome Course', 10001);
 
 insert into STUDENT_COURSE(student_id, course_id) values
 (20001, 10002),

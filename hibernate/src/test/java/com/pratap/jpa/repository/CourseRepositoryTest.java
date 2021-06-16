@@ -1,6 +1,7 @@
 package com.pratap.jpa.repository;
 
 import com.pratap.jpa.HibernateApplication;
+import com.pratap.jpa.constant.ReviewRating;
 import com.pratap.jpa.entity.Course;
 import com.pratap.jpa.entity.Review;
 import org.junit.jupiter.api.Test;
@@ -71,8 +72,8 @@ class CourseRepositoryTest {
     void testAddReviewsForCourse(){
 
         List<Review> reviews = new ArrayList<>();
-        reviews.add(new Review(5, "Great Course"));
-        reviews.add(new Review(5, "Very awesome course"));
+        reviews.add(new Review(ReviewRating.FIVE, "Great Course"));
+        reviews.add(new Review(ReviewRating.FIVE, "Very awesome course"));
         Course course = courseRepository.addReviewsForCourse(10003L, reviews);
         assertNotNull(course);
         assertEquals(3, course.getReviews().size());

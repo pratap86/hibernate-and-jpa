@@ -1,10 +1,13 @@
 package com.pratap.jpa.entity;
 
+import com.pratap.jpa.constant.ReviewRating;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -20,7 +23,8 @@ public class Review {
 
     @Getter
     @Setter
-    private int rating;
+    @Enumerated(EnumType.STRING)
+    private ReviewRating rating;
 
     @Getter
     @Setter
@@ -33,7 +37,7 @@ public class Review {
 
     protected Review(){}
 
-    public Review(int rating, String description){
+    public Review(ReviewRating rating, String description){
         this.rating = rating;
         this.description = description;
     }
