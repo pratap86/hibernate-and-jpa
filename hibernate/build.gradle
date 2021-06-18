@@ -26,6 +26,8 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.19.0'
 	implementation group: 'org.hibernate', name: 'hibernate-ehcache', version: '5.5.0.Final'
+	implementation 'mysql:mysql-connector-java'
+
 
 
 }
